@@ -1,61 +1,42 @@
 // Assignment code here
-var password = {
-  length: charLength(),
-  lowerCase: ,
-  upperCase: ,
-  specialChar: ,
-}
-var charLength = function() {
-  var getcharLength = "";
-  var charLengthPrompt = window.prompt
-  ("Choose a numeric value between 8 and 128 characters for your password.");
-  charLengthPrompt = parseInt(charLengthPrompt);
-};
-  //Change user input to numeric value with parseInt
-  //parseInt(userInput to numeric value)
-  /*if(number outside of 8-128 range) 
-  "Please choose a number between 8 and 128." 
-  run charLength function again.*/
-  if (charLength === (i < 8 || charLength === i > 128)
-    window.alert("Please choose a valid answer between 8 and 128.");
-    return charLength;
+
+//Generate Function (Parent)
+document.getElementById("generate").onclick = function() {
+    
+  //Defining character length from user input
+    var charLengthPrompt = window.prompt
+    ("Choose a numeric value between 8 and 128 characters for your password.");
+  //Validate number is in correct range
+    if (charLengthPrompt < 8 || charLengthPrompt > 128){
+      window.alert("Sorry, you must choose a number between 8 and 128.");
+    } 
+    else {
+      window.alert("Your password will be " + charLengthPrompt + "character(s) long.")
+    }
+  //Change string to number
+    charLengthPrompt = parseInt(charLengthPrompt);
+    console.log (charLengthPrompt);
+  };
+
+  //Choosing whether or not lower case characters will be a variable in the password
+  lowerCase = function() {
+    window.confirm("Should your password contain lowercase characters? Confirm to accept, Cancel to deny.")
+    console.log ("lowerCase")
+  
   }
-  else {
-  return charLength; }
-};
-lowerCase = function() {
-  window.confirm("Should your password contain lowercase characters? Confirm to accept, Cancel to deny.")
-  console.log ("lowerCase")
-  return lowerCase;
-}
-upperCase = function() {
-  window.confirm("Should your password contain lowercase characters? Confirm to accept, Cancel to deny.")
-  console.log ("upperCase")
-  return lowerCase;
-}
-specialChar= function(){
-  window.confirm("Should your password contain special characters? Confirm to accept, Cancel to deny.")
-  console.log ("specialChar")
-  return specialChar;
-}
-function generateBtn() {
-  function generatePassword {
-    charLength();
-    lowerCase();
-    upperCase();
-    specialChar();
+  //Choosing whether or not upper case characters will be a variable in the password
+  upperCase = function() {
+    window.confirm("Should your password contain lowercase characters? Confirm to accept, Cancel to deny.")
+    console.log ("upperCase")
+  
   }
-}  
-
-
-
-var password = [
-  charLength:""
-  lowerCase:""
-  upperCase:""
-  specialChar:""
-];
-
+  //Choosing whether or not special characters will be a variable in the password
+  specialChar= function(){
+    window.confirm("Should your password contain special characters? Confirm to accept, Cancel to deny.")
+    console.log ("specialChar")
+  
+  } 
+};
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -66,6 +47,13 @@ function writePassword() {
 
   passwordText.value = password;
 
+}
+//Array for password
+var password = {
+  length: charLength(),
+  lowerCase: lowerCase(),
+  upperCase: upperCase(),
+  specialChar: specialChar(),
 }
 
 // Add event listener to generate button
