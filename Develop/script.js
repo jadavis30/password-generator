@@ -10,37 +10,42 @@
       window.alert("Sorry, you must choose a number between 8 and 128.");
       generatePassword();
     } 
-    else {
-      window.alert("Your password will be " + charLength + " character(s) long.")
-    }
-  
+   
   //Change string to number
     charLength = parseInt(charLength);
     console.log (charLength);
   
 
   //Choosing whether or not lower case characters will be a variable in the password
-    var lowerCaseChars =  window.confirm("Should your password contain lowercase characters? Confirm to accept, Cancel to deny.");
+    var lowerCaseChars =  window.confirm("Does it need lower case characters? OK for 'Yes', Cancel for 'No'.");
     if (lowerCaseChars) {
       //password should now contain randomized lowercase letters
       var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
     }
+  
+  
+    //Choosing whether or not upper case characters will be a variable in the password
+    var upperCaseChars =  window.confirm("Does it need upper case characters? OK for 'Yes', Cancel for 'No'.");
+    if (upperCaseChars) {
+    //password should now contain randomized lowercase letters
+    var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+    //Choosing whether or not special characters will be a variable in the password
+    var specialChar = window.confirm("Does it need  special characters? Ok for 'Yes', Cancel for 'No'.");
+    if (specialChar) {
+    //password should now contain randomized special characters
+    var specialChar = "!@#$%^&*?"
+    }
     
-    console.log ("lowerCasePrompt")
+    function randomPassword() {
+      for (var i=0; i<string-length; i++) {
+        var rnum = Math.floor(Math.random() * chars.length);
+        randomPassword += chars.substring (rnum, rnum + 1);
+      }
+    }  
+    
+  }
   
-  }
-  //Choosing whether or not upper case characters will be a variable in the password
-  upperCase = function() {
-    window.confirm("Should your password contain lowercase characters? Confirm to accept, Cancel to deny.")
-    console.log ("upperCase")
-  
-  }
-  //Choosing whether or not special characters will be a variable in the password
-  specialChar= function(){
-    window.confirm("Should your password contain special characters? Confirm to accept, Cancel to deny.")
-    console.log ("specialChar")
-  }
-
 
 
 // Get references to the #generate element
