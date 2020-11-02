@@ -15,3 +15,6 @@ On 'click':
 
 ## Considerations:
 When user inputs length, this in turn defines how many characters are needed. Code is written to pick up this number and then randomize that many selected characters to generate password. In the future, code will be rewritten with jQuery to change confirm boxes to say Yes or No instead of Confirm or Cancel for a more logical user experience.
+Switched from array to concat lines to simplify process of building out the password and not bog down with multiple values.
+
+
